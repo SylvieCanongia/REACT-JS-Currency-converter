@@ -1,9 +1,10 @@
 @use 'src/styles/vars';
 
 .currencies {
-  height: 350px;
+  height: 380px;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  color: vars.$dark-orange;
 
   .currencies__title {
     font-size: vars.$medium-font-size;
@@ -11,12 +12,13 @@
     padding: vars.$small-space;
     padding-block-start: vars.$medium-space;
     border-bottom: 1px solid vars.$transparent-dark-orange;
+    text-shadow: 1px 1px vars.$very-dark-orange;
   }
 
   .currencies__list__item {
     font-size: vars.$medium-font-size;
     font-weight: 500;
-    color: vars.$dark-orange;
+    
     padding: vars.$small-space;
     border-bottom: 1px solid vars.$transparent-dark-orange;
 

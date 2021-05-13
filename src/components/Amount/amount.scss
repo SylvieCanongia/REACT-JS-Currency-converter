@@ -1,24 +1,22 @@
 @use 'src/styles/vars';
 
-.header {
-  background-color: vars.$dark-orange;
+.amount {
   height: vars.$simple-height;
-  color: vars.$white;
   text-align: center;
+  color: vars.$dark-orange;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-shadow: 1px 1px vars.$very-dark-orange;
 
-  .header__title {
+  .amount__display {
     font-size: vars.$very-large-font-size;
     font-weight: 700;
+    text-shadow: 1px 1px vars.$very-dark-orange;
     margin-block-end: vars.$small-space;
   }
 
-  .header__content {
+  .amount__currency {
     font-size: vars.$large-font-size;
     font-weight: 300;
   }
-  
 }

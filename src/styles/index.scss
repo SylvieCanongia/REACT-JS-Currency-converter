@@ -12,15 +12,24 @@
 }
 
 html,
-body {
+body,
+#root {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Spartan', sans-serif;
+  background: vars.$light-pink;
 }
 
 html {
   font-size: vars.$base-font-size;
 }
+
+#root {
+  display: flex;
+  align-items: center;
+}
+
 
 /* 
   // or you can import your own font

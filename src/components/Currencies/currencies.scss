@@ -1,0 +1,31 @@
+@use 'src/styles/vars';
+
+.currencies {
+  height: 350px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  .currencies__title {
+    font-size: vars.$medium-font-size;
+    font-weight: 700;
+    padding: vars.$small-space;
+    padding-block-start: vars.$medium-space;
+    border-bottom: 1px solid vars.$transparent-dark-orange;
+  }
+
+  .currencies__list__item {
+    font-size: vars.$medium-font-size;
+    font-weight: 500;
+    color: vars.$dark-orange;
+    padding: vars.$small-space;
+    border-bottom: 1px solid vars.$transparent-dark-orange;
+
+    &:last-child {
+      margin-block-end: vars.$medium-space;
+    }
+
+    &:hover {
+      background-color: vars.$light-pink;
+    }
+  }
+}

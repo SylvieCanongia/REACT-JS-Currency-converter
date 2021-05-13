@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import Header from 'src/components/Header';
+import Currencies from 'src/components/Currencies';
 
 // == Import
 import './styles.scss';
@@ -9,7 +10,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <div>Main</div>
+    <Currencies />
     <div>Footer</div>
 
   </div>

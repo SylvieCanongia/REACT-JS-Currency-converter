@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .app {
-  width: 730px;
-  border: vars.$very-large-outline solid vars.$light-pink;
+  width: 600px;
   margin-inline: auto;
+  background-color: vars.$white;
 }

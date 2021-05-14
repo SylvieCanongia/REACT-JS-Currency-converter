@@ -12,17 +12,11 @@ import './styles.scss';
 // == Component
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    showCurrencies: true,
+  };
 
-    this.state = {
-      showCurrencies: true,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
+  handleClick = () => {
     const { showCurrencies } = this.state;
 
     this.setState({

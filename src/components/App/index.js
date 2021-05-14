@@ -10,14 +10,44 @@ import currenciesList from 'src/data/currencies';
 import './styles.scss';
 
 // == Component
-const App = () => (
-  <div className="app">
-    <Header />
-    <Currencies currencies={currenciesList} />
-    <Amount />
+// eslint-disable-next-line react/prefer-stateless-function
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  </div>
-);
+    this.state = {
+      showCurrencies: true,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { showCurrencies } = this.state;
+
+    this.setState({
+      showCurrencies: !showCurrencies,
+    });
+  }
+
+  render() {
+    const { showCurrencies } = this.state;
+    return (
+      <div className="app">
+        <Header />
+        <button
+          type="button"
+          className="button"
+          onClick={this.handleClick}
+        >
+          Toggle currencies
+         </button>
+        {showCurrencies && <Currencies currencies={currenciesList} />}
+        <Amount />
+      </div>
+    );
+  }
+}
 
 // == Export
 export default App;

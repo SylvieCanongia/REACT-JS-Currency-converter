@@ -1,26 +1,28 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './currencies.scss';
 
-const Currencies = () => (
+const Currencies = ({ currenciesList }) => (
   <>
     <section className="currencies">
       <h2 className="currencies__title">Currencies</h2>
       <ul className="currencies__list">
-        <li className="currencies__list__item"><a href="">Australian Dollar</a></li>
-        <li className="currencies__list__item"><a href="">Bulgarian Lev </a></li>
-        <li className="currencies__list__item"><a href="">Brazilian Real</a></li>
-        <li className="currencies__list__item"><a href="">Canadian Dollar</a></li>
-        <li className="currencies__list__item"><a href="">Swiss Franc</a></li>
-        <li className="currencies__list__item"><a href="">Chinese Yuan Renminbi</a></li>
-        <li className="currencies__list__item"><a href="">Czech Koruna</a></li>
-        <li className="currencies__list__item"><a href="">Hong Kong Dollar</a></li>
-        <li className="currencies__list__item"><a href="">Croatian Kuna</a></li>
-        <li className="currencies__list__item"><a href="">Hungarian Forint</a></li>
-        <li className="currencies__list__item"><a href="">Indonesian Rupiah</a></li>
+        {currenciesList.map(({ currencyName }) => (
+          <li className="currencies__list__item" key={currencyName}><a href="">{currencyName}</a></li>
+        ))}
       </ul>
     </section>
   </>
 );
+
+Currencies.propTypes = {
+  currenciesList: PropTypes.arrayOf(
+    PropTypes.shape({
+      currencyName: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default Currencies;

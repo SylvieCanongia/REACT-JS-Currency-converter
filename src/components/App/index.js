@@ -4,6 +4,8 @@ import Header from 'src/components/Header';
 import Currencies from 'src/components/Currencies';
 import Amount from 'src/components/Amount';
 
+import currencies from 'src/data/currencies';
+
 // == Import
 import './styles.scss';
 
@@ -11,7 +13,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Currencies />
+    <Currencies currenciesList={currencies.currencies} />
     <Amount />
 
   </div>

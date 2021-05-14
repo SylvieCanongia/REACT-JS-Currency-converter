@@ -15,6 +15,8 @@ import './styles.scss';
 class App extends React.Component {
   state = {
     open: true,
+    baseAmount: 1,
+    currency: 'United States Dollar',
   };
 
   handleClick = () => {
@@ -26,13 +28,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { open } = this.state;
+    const { open, baseAmount, currency } = this.state;
     return (
       <div className="app">
-        <Header />
+        <Header baseAmount={baseAmount} />
         <CustomButton isOpen={open} manageClick={this.handleClick} />
         {open && <Currencies currencies={currenciesList} />}
-        <Amount />
+        <Amount currency={currency} />
       </div>
     );
   }

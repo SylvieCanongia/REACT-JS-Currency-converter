@@ -3,6 +3,7 @@ import React from 'react';
 import Header from 'src/components/Header';
 import Currencies from 'src/components/Currencies';
 import Amount from 'src/components/Amount';
+import CustomButton from 'src/components/CustomButton';
 
 import currenciesList from 'src/data/currencies';
 
@@ -13,30 +14,24 @@ import './styles.scss';
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   state = {
-    showCurrencies: true,
+    open: true,
   };
 
   handleClick = () => {
-    const { showCurrencies } = this.state;
+    const { open } = this.state;
 
     this.setState({
-      showCurrencies: !showCurrencies,
+      open: !open,
     });
   }
 
   render() {
-    const { showCurrencies } = this.state;
+    const { open } = this.state;
     return (
       <div className="app">
         <Header />
-        <button
-          type="button"
-          className="button"
-          onClick={this.handleClick}
-        >
-          Toggle currencies
-         </button>
-        {showCurrencies && <Currencies currencies={currenciesList} />}
+        <CustomButton isOpen={open} manageClick={this.handleClick} />
+        {open && <Currencies currencies={currenciesList} />}
         <Amount />
       </div>
     );

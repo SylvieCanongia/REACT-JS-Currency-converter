@@ -1,0 +1,24 @@
+@use 'src/styles/vars';
+
+.custom__button {
+  display: block;
+  margin-inline: auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid vars.$dark-orange;
+  background-color: vars.$white;
+  font-size: vars.$large-font-size;
+  color: vars.$dark-orange;
+  margin-block-start: -32px;
+
+  &:hover {
+    background-color: vars.$dark-orange;
+    color: vars.$white;
+    border: 4px solid vars.$white;
+  }
+
+  &.custom__button--open {
+    transform: rotate(90deg);
+  }
+}

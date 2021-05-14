@@ -12,13 +12,13 @@
 
   .header__title {
     font-size: vars.$very-large-font-size;
-    font-weight: 700;
-    margin-block-end: vars.$small-space;
+    font-weight: vars.$fw-bold;
+    margin-block-end: vars.$base-space * 2;
   }
 
-  .header__content {
+  .header__amount {
     font-size: vars.$large-font-size;
-    font-weight: 300;
+    font-weight: vars.$fw-light;
   }
   
 }

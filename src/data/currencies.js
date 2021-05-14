@@ -1,5 +1,4 @@
-export default {
-  currencies: [
+export default [
   {
     currency: 'AUD',
     currencyName: 'Australian Dollar',
@@ -155,5 +154,4 @@ export default {
     currencyName: 'South African Rand',
     rate: 16.9354,
   },
-],
-};
+];

@@ -5,12 +5,17 @@ $medium-font-size: 1.5rem;
 $large-font-size: 2rem;
 $very-large-font-size: 3rem;
 
+// Font weight
+$fw-light: 300;
+$fw-medium: 500;
+$fw-bold: 700;
+
 // Spacing
 
 $base-space: 8px;
-$small-space: 16px;
-$normal-space: 24px;
-$medium-space: 32px;
+// $small-space: $base-space * 2;    // 16px
+// $normal-space: $base-space * 3;   // 24px
+// $medium-space: $base-space * 4;   // 32px
 
 // Colors
 
@@ -28,9 +33,11 @@ $transparent-dark-orange: hsla(4.3deg, 67.8%, 59.8%, 0.5);
 $normal-radius: 5px;
 $large-radius: 15px;
 
-// Outline
-$very-large-outline: 15px;
-
 // heights
 $simple-height: 200px;
-$double-height: 400px;
+
+// Transitions
+$fast-transition: 0.2s;
+$slow-transition: 0.8s;
+
+

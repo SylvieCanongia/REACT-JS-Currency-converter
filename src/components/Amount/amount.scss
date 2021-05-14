@@ -10,13 +10,13 @@
 
   .amount__display {
     font-size: vars.$very-large-font-size;
-    font-weight: 700;
+    font-weight: vars.$fw-bold;
     text-shadow: 1px 1px vars.$very-dark-orange;
-    margin-block-end: vars.$small-space;
+    margin-block-end: vars.$base-space * 2;
   }
 
   .amount__currency {
     font-size: vars.$large-font-size;
-    font-weight: 300;
+    font-weight: vars.$fw-light;
   }
 }

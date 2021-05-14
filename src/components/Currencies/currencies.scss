@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .currencies {
-  height: 380px;
+  height: 500px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   color: vars.$dark-orange;
@@ -9,8 +9,8 @@
   .currencies__title {
     font-size: vars.$medium-font-size;
     font-weight: 700;
-    padding: vars.$small-space;
-    padding-block-start: vars.$medium-space;
+    padding: vars.$base-space * 2;
+    padding-block-start: vars.$base-space * 4;
     border-bottom: 1px solid vars.$transparent-dark-orange;
     text-shadow: 1px 1px vars.$very-dark-orange;
   }
@@ -18,16 +18,18 @@
   .currencies__list__item {
     font-size: vars.$medium-font-size;
     font-weight: 500;
-    
-    padding: vars.$small-space;
+    padding: vars.$base-space * 2;
     border-bottom: 1px solid vars.$transparent-dark-orange;
+    cursor: pointer;
+    transition: background-color vars.$slow-transition;
 
     &:last-child {
-      margin-block-end: vars.$medium-space;
+      margin-block-end: vars.$base-space * 4;
     }
 
     &:hover {
       background-color: vars.$light-pink;
+      transition: background-color vars.$fast-transition;
     }
   }
 }

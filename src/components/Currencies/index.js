@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import './currencies.scss';
 
-const Currencies = ({ currenciesList }) => (
+const Currencies = ({ currencies }) => (
   <>
     <section className="currencies">
       <h2 className="currencies__title">Currencies</h2>
       <ul className="currencies__list">
-        {currenciesList.map(({ currencyName }) => (
-          <li className="currencies__list__item" key={currencyName}><a href="">{currencyName}</a></li>
+        {currencies.map((currency) => (
+          <li className="currencies__list__item" key={currency.currencyName}>{currency.currencyName}</li>
         ))}
       </ul>
     </section>
@@ -18,7 +18,7 @@ const Currencies = ({ currenciesList }) => (
 );
 
 Currencies.propTypes = {
-  currenciesList: PropTypes.arrayOf(
+  currencies: PropTypes.arrayOf(
     PropTypes.shape({
       currencyName: PropTypes.string.isRequired,
     }).isRequired,

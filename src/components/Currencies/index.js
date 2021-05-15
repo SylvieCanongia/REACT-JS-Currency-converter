@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './currencies.scss';
+import Currency from './Currency';
 
 const Currencies = ({ currencies, handleClickOnCurrency }) => (
   <>
@@ -10,15 +11,11 @@ const Currencies = ({ currencies, handleClickOnCurrency }) => (
       <h2 className="currencies__title">Currencies</h2>
       <ul className="currencies__list">
         {currencies.map((currency) => (
-          <li
-            className="currencies__list__item"
+          <Currency
+            name={currency.currencyName}
+            handleClickOnCurrency={handleClickOnCurrency}
             key={currency.currencyName}
-            onClick={() => {
-              handleClickOnCurrency(currency.currencyName);
-            }}
-          >
-            {currency.currencyName}
-          </li>
+          />
         ))}
       </ul>
     </section>

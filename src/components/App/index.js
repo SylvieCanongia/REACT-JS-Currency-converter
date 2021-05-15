@@ -11,7 +11,6 @@ import currenciesList from 'src/data/currencies';
 import './styles.scss';
 
 // == Component
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   state = {
     open: true,
@@ -29,7 +28,7 @@ class App extends React.Component {
     });
   }
 
-  //  comppute the amount based on selected currency, its rate and the baseAmount
+  //  compute the amount based on selected currency, its rate and the baseAmount
   computeAmount = () => {
     const { baseAmount, currency } = this.state;
     const currencyData = currenciesList.find((data) => data.currencyName === currency);

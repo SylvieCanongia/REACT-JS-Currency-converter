@@ -17,6 +17,8 @@ class App extends React.Component {
     open: true,
     baseAmount: 1,
     currency: 'United States Dollar',
+    // search content
+    inputSearch: '',
   };
 
   handleClick = () => {
@@ -33,7 +35,6 @@ class App extends React.Component {
     const currencyData = currenciesList.find((data) => data.currencyName === currency);
     const result = currencyData.rate * baseAmount;
     const roundedResult = result.toFixed(2);
-
     return roundedResult;
   }
 
@@ -43,8 +44,19 @@ class App extends React.Component {
     });
   }
 
+  setSearch = (newValue) => {
+    this.setState({
+      inputSearch: newValue,
+    });
+  }
+
   render() {
-    const { open, baseAmount, currency } = this.state;
+    const {
+      open,
+      baseAmount,
+      currency,
+      inputSearch,
+    } = this.state;
     const result = this.computeAmount();
 
     return (
@@ -55,6 +67,8 @@ class App extends React.Component {
           <Currencies
             currencies={currenciesList}
             handleClickOnCurrency={this.setCurrency}
+            search={inputSearch}
+            setSearch={this.setSearch}
           />
         )}
         <Amount currency={currency} value={result} />

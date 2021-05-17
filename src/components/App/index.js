@@ -20,6 +20,23 @@ class App extends React.Component {
     inputSearch: '',
   };
 
+  componentDidMount() {
+    this.updateTitle();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { currency } = this.state;
+    // console.log('[App] componentDidUpdate');
+    if (prevState.currency !== currency) {
+      this.updateTitle();
+    }
+  }
+
+  updateTitle = () => {
+    const { currency } = this.state;
+    document.title = `Converter - ${currency}`;
+  }
+
   handleClick = () => {
     const { open } = this.state;
 
@@ -28,7 +45,7 @@ class App extends React.Component {
     });
   }
 
-  //  compute the amount based on selected currency, its rate and the baseAmount
+  // compute the amount based on selected currency, its rate and the baseAmount
   computeAmount = () => {
     const { baseAmount, currency } = this.state;
     const currencyData = currenciesList.find((data) => data.currencyName === currency);
@@ -61,7 +78,6 @@ class App extends React.Component {
         return loweredCurrencyName.includes(loweredInputSearch);
       });
     }
-
     return filteredCurrencies;
   }
 

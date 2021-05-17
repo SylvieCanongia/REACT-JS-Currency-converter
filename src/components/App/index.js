@@ -49,6 +49,22 @@ class App extends React.Component {
     });
   }
 
+  getFilteredCurrencies = () => {
+    const { inputSearch } = this.state;
+
+    let filteredCurrencies = currenciesList;
+    // currencies filter if search field is not empty
+    if (inputSearch.trim().length > 0) {
+      const loweredInputSearch = inputSearch.trim().toLowerCase();
+      filteredCurrencies = currenciesList.filter((currency) => {
+        const loweredCurrencyName = currency.currencyName.toLowerCase();
+        return loweredCurrencyName.includes(loweredInputSearch);
+      });
+    }
+
+    return filteredCurrencies;
+  }
+
   render() {
     const {
       open,
@@ -58,13 +74,15 @@ class App extends React.Component {
     } = this.state;
     const result = this.computeAmount();
 
+    const filteredCurrencies = this.getFilteredCurrencies();
+
     return (
       <div className="app">
         <Header baseAmount={baseAmount} />
         <CustomButton isOpen={open} manageClick={this.handleClick} />
         {open && (
           <Currencies
-            currencies={currenciesList}
+            currencies={filteredCurrencies}
             handleClickOnCurrency={this.setCurrency}
             search={inputSearch}
             setSearch={this.setSearch}

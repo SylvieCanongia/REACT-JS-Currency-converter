@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .amount {
-  height: vars.$simple-height;
+  height: vars.$simple-height * 0.9;
   text-align: center;
   color: vars.$dark-orange;
   display: flex;
@@ -9,14 +9,14 @@
   flex-direction: column;
 
   .amount__display {
-    font-size: vars.$very-large-font-size;
+    font-size: vars.$large-font-size;
     font-weight: vars.$fw-bold;
     text-shadow: 1px 1px vars.$very-dark-orange;
     margin-block-end: vars.$base-space * 2;
   }
 
   .amount__currency {
-    font-size: vars.$large-font-size;
+    font-size: vars.$medium-font-size;
     font-weight: vars.$fw-light;
   }
 }

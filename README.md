@@ -15,3 +15,7 @@ A currency converter in React JS
 - Selection of the currency in the list on click and dynamic conversion of a fix base amount
 
 - Implement a controlled field to filter currencies.
+
+- Add currencies filter on input search.
+
+- Dynamization of the document title according to the selected currency with 'componentDidUpdate'.

@@ -81,6 +81,12 @@ class App extends React.Component {
     return filteredCurrencies;
   }
 
+  setBaseAmount = (newValue) => {
+    this.setState({
+      baseAmount: newValue,
+    });
+  }
+
   render() {
     const {
       open,
@@ -94,7 +100,7 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <Header baseAmount={baseAmount} />
+        <Header baseAmount={baseAmount} setBaseAmount={this.setBaseAmount} />
         <CustomButton isOpen={open} manageClick={this.handleClick} />
         {open && (
           <Currencies

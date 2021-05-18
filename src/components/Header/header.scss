@@ -2,7 +2,7 @@
 
 .header {
   background-color: vars.$dark-orange;
-  height: vars.$simple-height;
+  min-height: vars.$simple-height;
   width: 100%;
   color: vars.$white;
   text-align: center;
@@ -17,9 +17,31 @@
     margin-block-end: vars.$base-space * 2;
   }
 
-  .header__amount {
-    font-size: vars.$large-font-size;
-    font-weight: vars.$fw-light;
+  .header__input {
+      display: flex;
+      justify-content: center;
+
+    &__amount {
+      background-color: vars.$white;
+      font-size: vars.$base-font-size;
+      font-weight: vars.$fw-medium;
+      padding: vars.$base-space * 0.8;
+      line-height: 1.5;
+      width: 40%;
+      border-radius: vars.$large-radius;
+      border: solid;
+      border-color: vars.$dark-orange;
+    }
+
+    // &__amount::placeholder {
+    //   color: vars.$dark-orange;
+    // }
+
+    &__currency {
+      font-size: vars.$base-font-size;
+      font-weight: vars.$fw-light;
+      line-height: 1.5;
+      padding: vars.$base-space * 0.8;
+    }
   }
-  
 }

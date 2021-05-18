@@ -19,3 +19,7 @@ A currency converter in React JS
 - Add currencies filter on input search.
 
 - Dynamization of the document title according to the selected currency with 'componentDidUpdate'.
+
+## Video presentation
+
+![Alt](converter-video.gif "Video presentation")
